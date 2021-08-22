@@ -1,0 +1,10 @@
+@media (min-width: 768px) {
+    .col-md-4 {
+        width: 100% !important; 
+    }
+    }
+    .input-group {
+        display: inline-grid !important;
+        width: 30% !important;
+        margin: 19px !important;
+    }

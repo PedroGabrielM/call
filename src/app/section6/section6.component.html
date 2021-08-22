@@ -1,0 +1,98 @@
+<section class="layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="full">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="full text_align_center">
+                     <div class="heading_main center_head_border heading_style_1">
+                        <h2>Table price</h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="full" style="margin-top:10px;">
+               <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                     <div class="table_price text_align_center">
+                        <div class="table_price_head">
+                           <h5>{{ produtoChamada }}</h5>
+                        </div>
+                        <div class="table_price_cont">
+                           <div class="table_price_per">
+                              <br>
+                              <p> Tempo: {{ tempo }} min</p>
+                              <br>
+                              <p> Tarifa: {{ tarifa }}</p>
+                              <br>
+                              <p> Preco: ${{ preco }}</p>
+                              <br>
+                              <p> Produto: {{ produto }}</p>
+                              <br>
+                           </div>
+                           <div class="table_price_cont_bottm">
+                              <ul>
+                                 <li>
+                                    <div class="input-group mb-3">
+                                       <div class="input-group-prepend">
+                                          <label for='myList'>Lista de Produtos Fale Mais</label>
+                                          <select class="custom-select mr-sm-2 form-control" aria-describedby="inputGroup-sizing-default"
+                                             type="number" name="produto-fale-mais"                                          
+                                             (change)="onChangeProduto($event)" id="produto-fale-mais">
+                                             <option selected>none</option>
+                                             <option *ngFor="let produto of produtoFaleMais" [ngValue]="produto">{{produto}}</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="table_price_bottm">
+                           <button class="bt_main" type="button" (click)="onClickCalcula()">Calcular</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                     <label class="input-group-text" for="cidade-origem">Origem da Chamada -->
+                        <select class="custom-select mr-sm-2 form-control" aria-describedby="inputGroup-sizing-default"
+                           type="number" name="cidade-origem" 
+                           (change)="onChangeOrigem($event)" id="cidade-origem">
+                           <option selected>Origem</option>
+                           <option *ngFor="let origem of origemChamada" [ngValue]="origem">{{ origem }}</option>
+                        </select>
+                     </label>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                     <label class="input-group-text" for="cidade-destino">Destino da chamada -->
+                        <select class="custom-select mr-sm-2 form-control" aria-describedby="inputGroup-sizing-default"
+                           type="number" name="cidade-destino"
+                           (change)="onChangeDestino($event)" id="cidade-destino">
+                           <option selected>Destino</option>
+                           <option *ngFor="let destino of destinoChamada" [ngValue]="destino">{{ destino }}
+                           </option>
+                        </select>
+                     </label>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                     <label class="input-group-text" for="tempo-ligacao">Tempo -->
+                        <input type="number" id="tempo-ligacao" class="custom-select mr-sm-2 form-control"
+                           placeholder="Tempo em min" (input)="onTempoDaChamda($event)">
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
